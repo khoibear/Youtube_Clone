@@ -1,8 +1,17 @@
 .header {
   height: 55px;
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(223, 213, 213) ;
+  z-index: 100;
 }
 .left-section{
   display: flex;
@@ -29,9 +38,7 @@
   height: 36px;
   padding-left: 10px;
   font-size: 16px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: gray;
+  border: 1px solid gray;
   border-radius: 3px;
   box-shadow: inset 1px 2px 1px rgba(0, 0, 0.01);
   width: 0;
@@ -40,6 +47,17 @@
   font-family: Roboto, Arial;
   font-size: 16px;
 
+}
+.search-button,
+.voice-button,
+.upload-button,
+.youtube-app-button,
+.notifications-button,
+.profile-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .search-button{
   height: 40px;
@@ -50,9 +68,38 @@
   margin-left: -1px;
   margin-right: 10px;
 }
+.search-button .tooltip,
+.voice-button .tooltip,
+.upload-button .tooltip,
+.youtube-app-button .tooltip,
+.notifications-button .tooltip,
+.profile-button .tooltip{
+  font-family: Roboto, Arial;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  bottom: -30px;
+  opacity: 0;
+  transition: 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.search-button:hover .tooltip,
+.voice-button:hover .tooltip,
+.upload-button:hover .tooltip,
+.youtube-app-button:hover .tooltip,
+.notifications-button:hover .tooltip,
+.profile-button:hover .tooltip{
+  opacity: 1;
+}
 .search-icon{
   height: 25px;
-  margin-top: 4px;
 }
 .voice-button{
   height: 40px;
@@ -63,7 +110,6 @@
 }
 .voice-icon{
   height: 24px;
-  margin-top: 4px;
 }
 .right-section{
   width: 180px;
@@ -92,8 +138,23 @@
   height: 24px;
 }
 .notifications-button{
+  position: relative;
   border: none;
   background-color: white;
+}
+.notifications-count{
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background-color: red;
+  color: white;
+  font-family: Roboto, Arial;
+  font-size: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 10px;
 }
 .profile-icon{
   height: 32px;
